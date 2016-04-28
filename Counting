@@ -1,0 +1,20 @@
+def char_count(list)
+  letters = Hash.new(0)
+  list.each do |word|
+    word.gsub(' ','').split('').each { |letter| letters[letter] += 1 }
+  end
+  letters
+end
+
+puts char_count(["lighthouse in the house..."])
+
+def char_index(string)
+ chars_indexed = Hash.new
+ string.split('').each_with_index do | letter, index |
+   chars_indexed[letter] ||= []
+   chars_indexed[letter] << index
+ end
+ chars_indexed
+end
+
+puts char_index("lighthouse in the house...")
